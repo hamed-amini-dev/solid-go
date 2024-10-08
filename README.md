@@ -27,8 +27,11 @@ git clone https://github.com/hamed-amini-dev/solid-go.git
 
 2. Navigate to the project folder:
 
-cd solid-go-examples 3. Run the examples:
-go run main.go
+cd solid-go
+
+3. Run the examples:
+
+go run app/main.go
 
 Contributing
 
