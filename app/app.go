@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/hamed-amini-dev/solid-go/dip"
 	"github.com/hamed-amini-dev/solid-go/isp"
+	"github.com/hamed-amini-dev/solid-go/srp"
 )
 
 func main() {
@@ -39,6 +40,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	//  srp
+
+	srpN := srp.NewEmailNotification()
+	user := srp.NewUser(srpN)
+	user.Notify()
 
 	//
 
