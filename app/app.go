@@ -1,6 +1,9 @@
 package main
 
-import "github.com/hamed-amini-dev/solid-go/dip"
+import (
+	"github.com/hamed-amini-dev/solid-go/dip"
+	"github.com/hamed-amini-dev/solid-go/isp"
+)
 
 func main() {
 	// DIP
@@ -21,5 +24,22 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	// isp
+
+	human := isp.NewHuman()
+	robot := isp.NewRobot()
+
+	err = human.Work()
+	if err != nil {
+		panic(err)
+	}
+
+	err = robot.Work()
+	if err != nil {
+		panic(err)
+	}
+
+	//
 
 }
