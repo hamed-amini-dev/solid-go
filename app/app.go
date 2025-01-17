@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/hamed-amini-dev/solid-go/dip"
 	"github.com/hamed-amini-dev/solid-go/isp"
+	"github.com/hamed-amini-dev/solid-go/ocp"
 	"github.com/hamed-amini-dev/solid-go/srp"
 )
 
@@ -47,6 +48,12 @@ func main() {
 	user := srp.NewUser(srpN)
 	user.Notify()
 
-	//
+	//  ocp
 
+	ocpStrip := &ocp.Stripe{}
+	ocpPaypal := &ocp.PayPal{}
+	ocp.Pay(ocpStrip)
+	ocp.Pay(ocpPaypal)
+
+	// lsp
 }
