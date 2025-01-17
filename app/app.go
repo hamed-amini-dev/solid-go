@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/hamed-amini-dev/solid-go/dip"
 	"github.com/hamed-amini-dev/solid-go/isp"
+	"github.com/hamed-amini-dev/solid-go/lsp"
 	"github.com/hamed-amini-dev/solid-go/ocp"
 	"github.com/hamed-amini-dev/solid-go/srp"
 )
@@ -52,8 +53,20 @@ func main() {
 
 	ocpStrip := &ocp.Stripe{}
 	ocpPaypal := &ocp.PayPal{}
-	ocp.Pay(ocpStrip)
-	ocp.Pay(ocpPaypal)
+	proc := ocp.Processor{}
+	proc.Pay(ocpStrip)
+	proc.Pay(ocpPaypal)
 
 	// lsp
+
+	rec := lsp.Rectangle{Width: 10, Height: 20}
+	cir := lsp.Circle{Radius: 10}
+
+	s := lsp.IShape{}
+
+	s.CalculateArea(rec)
+	s.CalculateArea(cir)
+
+	//
+
 }

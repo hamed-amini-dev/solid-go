@@ -2,7 +2,7 @@ package ocp
 
 import "fmt"
 
-type PaymentProcessor interface {
+type Payment interface {
 	ProcessPayment()
 }
 
@@ -18,6 +18,12 @@ func (s *Stripe) ProcessPayment() {
 	fmt.Println("Stripe")
 }
 
-func Pay(p PaymentProcessor) {
+type PaymentProcessor interface {
+	Pay(p Payment)
+}
+
+type Processor struct{}
+
+func (P *Processor) Pay(p Payment) {
 	p.ProcessPayment()
 }
